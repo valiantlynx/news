@@ -65,23 +65,24 @@ function Nav() {
     </a>
   ));
   return (
-    <Header height={56} className={classes.header} mb={120}>
+    <Header height={56} className={classes.header} mb={20}>
       <div className={classes.inner}>
         <Group>
           <Burger opened={opened} onClick={toggle} size="sm" />
-
+          
+          <ButtonToggle />
         </Group>
 
         <Group>
           <Group ml={50} spacing={5} className={classes.links}>
-            {items}
-            <ButtonToggle />
+          {items}
+     
           </Group>
           <Autocomplete
             className={classes.search}
             placeholder="Search"
             icon={<IconSearch size={16} stroke={1.5} />}
-            data={['React', 'Angular', 'Vue', 'Next.js', 'Riot.js', 'Svelte', 'Blitz.js']}
+            data={['Kenya', 'Norge', 'Ukraine', 'Putin', 'Sweden', 'Denmark', 'Africa']}
           />
         </Group>
       </div>

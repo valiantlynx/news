@@ -1,11 +1,18 @@
 import axios from "axios"
 
 export const news = axios.create({
-    baseURL: 'https://newsapi.org/v2/everything?'
+    baseURL: 'https://newsapi.org/v2/everything'
 })
-
-export const getPostsPage = async (theme = 1) => {
-    const response = await companies.get(`q=${theme}&apiKey=d3a68d3a93a54948a016a1553bc4d20c`)
-    //console.log(response)
-    return response
+export const topNews = axios.create({
+    baseURL: 'https://newsapi.org/v2/top-headlines'
+})
+export const getPostsPage = async (tema = "kenya") => {
+    const response = await news.get(`?q=${tema}&apiKey=838674747d4742299653d7e6d252ae35`)
+    //console.log(response.data.articles)
+    return response.data.articles
+}
+export const getTopPostsPage = async (tema = "no") => {
+    const response = await topNews.get(`?country=${tema}&apiKey=838674747d4742299653d7e6d252ae35`)
+    //console.log(response.data.articles)
+    return response.data.articles
 }
