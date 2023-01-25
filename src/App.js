@@ -1,7 +1,6 @@
 
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
-import { Button } from '@mantine/core';
 import HeaderWithTabs from './components/HeaderWithTabs';
 
 function App() {

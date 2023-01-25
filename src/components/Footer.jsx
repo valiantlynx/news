@@ -197,7 +197,7 @@ export default function Footer() {
         <footer className={classes.footer}>
       <Container className={classes.inner}>
         <div className={classes.logo}>
-        <img src='../logo.svg'>
+        <img src='https://raw.githubusercontent.com/Animevariant/Animevariant/main/android-chrome-144x144.png'>
         </img>
        
           <Text size="xs" color="dimmed" className={classes.description}>
