@@ -1,6 +1,5 @@
 import { createStyles, Text, Container, ActionIcon, Group } from '@mantine/core';
 import { IconBrandTwitter, IconBrandYoutube, IconBrandInstagram } from '@tabler/icons';
-import { MantineLogo } from '@mantine/ds';
 import { Link } from 'react-router-dom';
 
 const useStyles = createStyles((theme) => ({
@@ -172,10 +171,10 @@ export default function Footer() {
     const data = jsonData.data.flat();
   
     const { classes } = useStyles();
-    console.log("sata", data)
+ 
     
     const groups = data.map((group) => {
-        console.log(group)
+      
         const links = group.links.map((link, index) => (
 
             < Link key={index}   className={classes.link} to={link.link} 
@@ -201,14 +200,14 @@ export default function Footer() {
         </img>
        
           <Text size="xs" color="dimmed" className={classes.description}>
-            Build fully functional accessible web applications faster than ever
+            Read the latest news for free. Read from anywhere in the world.
           </Text>
         </div>
         <div className={classes.groups}>{groups}</div>
       </Container>
       <Container className={classes.afterFooter}>
         <Text color="dimmed" size="sm">
-          © 2020 mantine.dev. All rights reserved.
+          © 2023 Variant News. All rights reserved.
         </Text>
 
         <Group spacing={0} className={classes.social} position="right" noWrap>

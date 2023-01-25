@@ -1,6 +1,7 @@
 import { createStyles, Header, Autocomplete, Group, Burger } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import { IconSearch } from '@tabler/icons';
+import { ButtonToggle } from './ButtonToggle';
 
 
 const useStyles = createStyles((theme) => ({
@@ -36,7 +37,7 @@ const useStyles = createStyles((theme) => ({
     textDecoration: 'none',
     color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
     fontSize: theme.fontSizes.sm,
-    fontWeight: 500,  
+    fontWeight: 500,
     '&:hover': {
       backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
     },
@@ -68,12 +69,13 @@ function Nav() {
       <div className={classes.inner}>
         <Group>
           <Burger opened={opened} onClick={toggle} size="sm" />
-        
+
         </Group>
 
         <Group>
           <Group ml={50} spacing={5} className={classes.links}>
             {items}
+            <ButtonToggle />
           </Group>
           <Autocomplete
             className={classes.search}
