@@ -25,6 +25,7 @@ export function ArticleCardVertical(props) {
     "image": props.image,
     "category": "Norge",
     "title": props.title,
+    "link": props.url,
     "date": props.date,
     "author": {
       "name":  props.source,
@@ -33,7 +34,9 @@ export function ArticleCardVertical(props) {
   }
 
   return (
-    <Card withBorder radius="md" p={0} className={classes.card}>
+    <a href={jsondata.link}
+          target="_blank">
+    <Card withBorder radius="md" p={0} className={classes.card} >
       <Group noWrap spacing={0}>
         <Image src={jsondata.image} height={140} width={140} />
         <div className={classes.body}>
@@ -57,6 +60,6 @@ export function ArticleCardVertical(props) {
           </Group>
         </div>
       </Group>
-    </Card>
+    </Card></a>
   );
 }

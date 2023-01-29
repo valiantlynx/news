@@ -16,3 +16,8 @@ export const getTopPostsPage = async (tema = "no") => {
     //console.log(response.data.articles)
     return response.data.articles
 }
+export const getTopGeneralPostsPage = async (tema = "science") => {
+    const response = await topNews.get(`?category=${tema}&apiKey=838674747d4742299653d7e6d252ae35`)
+    //console.log(response.data.articles)
+    return response.data.articles
+}

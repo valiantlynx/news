@@ -33,7 +33,8 @@ export function BadgeCard(props) {
   const jsondata = {
     "image": props.image,
     "title": props.title,
-    "country":props.country,
+    "country": props.country,
+    "link": props.url,
     "description": props.description,
     "badges": [
       {
@@ -81,9 +82,16 @@ export function BadgeCard(props) {
       </Card.Section>
 
       <Group mt="xs">
-        <Button radius="md" style={{ flex: 1 }}>
-          Show details
-        </Button>
+        <a href={jsondata.link}
+          target="_blank">
+          <Button
+            radius="md"
+            style={{ flex: 1 }}
+          >
+            Show details
+          </Button>
+        </a>
+
         <ActionIcon variant="default" radius="md" size={36}>
           <IconHeart size={18} className={classes.like} stroke={1.5} />
         </ActionIcon>

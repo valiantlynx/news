@@ -3,14 +3,14 @@ import Footer from './Footer';
 import Nav from './Nav';
 import { BadgeCard } from './BadgeCard';
 import { useQuery } from '@tanstack/react-query';
-import { getTopPostsPage } from './api/axios';
+import { getTopGeneralPostsPage } from './api/axios';
 import { ArticleCardVertical } from './ArticleCardVertical';
 import { ImageCard } from './ImageCard';
 
 const PRIMARY_COL_HEIGHT = 300;
 
-function HeaderWithTabs() {
-  const tema = "no";
+function Trending() {
+  const tema = "general";
   const theme = useMantineTheme();
   const SECONDARY_COL_HEIGHT = PRIMARY_COL_HEIGHT / 2 - theme.spacing.md / 2;
   const {
@@ -20,7 +20,7 @@ function HeaderWithTabs() {
     data: newsPages,
     isFetching,
     isPreviousData,
-  } = useQuery(['/', tema], () => getTopPostsPage(tema), {
+  } = useQuery(['/trending', tema], () => getTopGeneralPostsPage(tema), {
     keepPreviousData: true
   })
 
@@ -80,26 +80,6 @@ function HeaderWithTabs() {
       <center>
         <h1>Trending</h1>
       </center>
-
-      <Container my="sm" >
-        <SimpleGrid cols={2} spacing="md" breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
-          {child}
-          <Grid gutter="md">
-            <Grid.Col>
-              {child2}
-            </Grid.Col>
-            <Grid.Col span={6}>
-              {child3}
-            </Grid.Col>
-            <Grid.Col span={6}>
-              {child4}
-            </Grid.Col>
-          </Grid>
-        </SimpleGrid>
-      </Container>
-      <center>
-        <h1>News Gallery</h1>
-      </center>
       <Container my="sm">
         <SimpleGrid cols={1} spacing="md" >
           <Grid breakpoints={[{ maxWidth: 'sm', cols: 1 }]}>
@@ -113,4 +93,4 @@ function HeaderWithTabs() {
   )
 }
 
-export default HeaderWithTabs
+export default Trending

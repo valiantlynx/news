@@ -45,9 +45,10 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const links = [
-  { link: '/', label: 'Trending' },
+  { link: '/', label: 'Home' },
+  { link: '/trending', label: 'Trending' },
   { link: '/about', label: 'About' },
-  { link: '/contact', label: 'Contact' },
+  { link: '/faq', label: 'FAQ' }
 ];
 
 function Nav() {
@@ -59,7 +60,7 @@ function Nav() {
       key={link.label}
       href={link.link}
       className={classes.link}
-      onClick={(event) => event.preventDefault()}
+    // onClick={(event) => event.preventDefault()}
     >
       {link.label}
     </a>
@@ -69,15 +70,13 @@ function Nav() {
       <div className={classes.inner}>
         <Group>
           <Burger opened={opened} onClick={toggle} size="sm" />
-          
-          <ButtonToggle />
         </Group>
-
-        <Group>
-          <Group ml={50} spacing={5} className={classes.links}>
+        <Group ml={50} spacing={5} className={classes.links}>
+          <ButtonToggle />
           {items}
-     
-          </Group>
+        </Group>
+        <Group>
+
           <Autocomplete
             className={classes.search}
             placeholder="Search"
