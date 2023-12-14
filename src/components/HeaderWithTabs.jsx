@@ -27,7 +27,7 @@ function HeaderWithTabs() {
   if (isLoading) return <p>Loading Users...</p>
   if (isError) return <p>Error: {error.message}</p>
 
-  //console.log(newsPages)
+  console.log(newsPages)
 
   const content = newsPages.map(newsPage => <Grid.Col gutter="md" key={newsPage.title} span={4}> <BadgeCard
    
